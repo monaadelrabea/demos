@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="spring-boot-log-to-kafka-example" packages="com.example">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d{DEFAULT_MICROS} %-5level %logger{1} - %msg%n}"/>
+        </Console>
+        <Kafka name="kafkaAppender" topic="${env:LOG_KAFKA_TOPIC}">
+            <JSONLayout/>
+            <Property name="bootstrap.servers">${env:LOGGING_BOOTSTRAP_SERVERS}</Property>
+        </Kafka>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <Logger name="com.example" additivity="false" level="${env:LOG_LEVEL_SERVICE}">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="kafkaAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>
