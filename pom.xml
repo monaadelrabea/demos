@@ -18,9 +18,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <output.directory>out</output.directory>
-        <afaqy.core.version>0.9.1</afaqy.core.version>
-        <afaqy.avl.core.version>1.27.7</afaqy.avl.core.version>
-        <event.core.version>1.4.3</event.core.version>
         <log4j2.version>2.17.0</log4j2.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger-annotations.version>1.5.21</swagger-annotations.version>
